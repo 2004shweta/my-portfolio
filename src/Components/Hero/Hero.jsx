@@ -80,7 +80,6 @@ const Hero = () => {
       <h1><span>I am {name}</span>, {role}</h1>
       <p>{description}</p>
 
-
       <div className="hero-action">
         <div className="hero-connect" onClick={() => window.location.href = 'mailto:jaiswalshweta021@gmail.com'}>
           Connect with me
@@ -88,7 +87,6 @@ const Hero = () => {
         <div className="hero-resume" onClick={handleResumeClick}>
           My resume
         </div>
-        
       </div>
       <div className="hero-icons">
         <a href="#"><i className="fab fa-github"></i></a>
@@ -96,6 +94,8 @@ const Hero = () => {
         <a href="#"><i className="fab fa-google"></i></a>
         <a href="#"><i className="fab fa-twitter"></i></a>
         <a href="#"><i className="fab fa-instagram"></i></a>
+        {/* <a href="#"><i className="fas fa-code"></i> LeetCode</a>
+        <a href="#"><i className="fas fa-book"></i> GeeksforGeeks</a> */}
       </div>
     </div>
   );

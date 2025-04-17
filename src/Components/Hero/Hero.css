@@ -63,12 +63,13 @@
   
   .hero-connect:hover {
     border: 2px solid white;
-    background: linear-gradient(267deg, #0fb85b -5.09%, #0a5c2f 106.28%);
+    background: linear-gradient(270deg, #ff004c -5.09%, #ff1d61 106.28%);
+    /* background: linear-gradient(267deg, #0fb85b -5.09%, #0a5c2f 106.28%); */
   }
   
   .hero-resume:hover {
-    border-color: #0fb85b;
-    background-color: rgba(255, 255, 255, 0.05);
+    border-color:  #ff004c;
+    background-color: #ff1d61(255, 255, 255, 0.05);
   }
   
   /* Responsive styling */
@@ -129,7 +130,7 @@
   }
   
   .hero-icons a:hover {
-    color: #0fb85b;
+    color: #ff004c;
   }
   
   

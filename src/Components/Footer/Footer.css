@@ -8,10 +8,11 @@
     display: flex;
     justify-content: space-between;
 }
-.footer-top-left p{
+/* .footer-top-left p{
     font-size: 20px;
     max-width: 400px;
-}
+    margin: 5px 0px;
+} */
 .footer-top-right{
     display: flex;
     align-items: center;
@@ -29,7 +30,8 @@
     outline: none;
     border: none;
     border: transparent;
-    color: #a0a0a0;
+    /* color: #a0a0a0; */
+    background: #32323B;
     font-family: 'Outfit';
     font-size: 18px;
 }

@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 function MyWork() {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Slower animation duration
+      duration: 1700, // Slower animation duration
       once: true,
       easing: 'ease-in-out',
     });

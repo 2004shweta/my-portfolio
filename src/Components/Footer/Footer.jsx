@@ -8,7 +8,7 @@ import 'aos/dist/aos.css';
 function Footer() {
   useEffect(() => {
     AOS.init({
-      duration: 1500, // Slow down the animation duration
+      duration: 1800, // Slow down the animation duration
       once: true, // Trigger animation only once
       easing: 'ease-in-out',
     });
@@ -20,7 +20,7 @@ function Footer() {
       <div className="footer-top" data-aos="fade-up">
         <div className="footer-top-left" data-aos="fade-left" data-aos-delay="200">
           {/* <img src={footer_logo} alt="Footer Logo" /> */}
-          <p>I am Passionate Developer</p>
+          {/* <p>I am Passionate Developer</p> */}
         </div>
 
         <div className="footer-top-right" data-aos="fade-right" data-aos-delay="400">
@@ -28,17 +28,17 @@ function Footer() {
             <img src={user_icon} alt="User Icon" />
             <input type='email' placeholder='Enter your email' />
           </div>
-          <div className="footer-subscribe"></div>
+          <div className="footer-subscribe">Subscribe</div>
         </div>
       </div>
 
       <hr />
+{/* 
+      Bottom Footer */}
+      <div className="footer-bottom" >
+        <p className="footer-bottom-left">© 2025 All rights reserved</p>
 
-      {/* Bottom Footer */}
-      <div className="footer-bottom">
-        <p className="footer-bottom-left" data-aos="fade-left">© 2025 All rights reserved</p>
-
-        <div className="footer-bottom-right" data-aos="fade-right">
+        <div className="footer-bottom-right">
           <p>Terms of Service</p>
           <p>Privacy Policy</p>
           <p>Connect with me</p>
