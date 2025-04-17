@@ -1,0 +1,51 @@
+.fullstack-container {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 20px;
+    /* color: #23E17A; */
+    color: #ff1d61;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+   
+  }
+  
+  .fullstack-container h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-size: 75px;
+    font-weight: 500px;
+  }
+  
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 30px;
+    max-width: 800px; /* Set a max-width to prevent stretching to the edges */
+    margin-left: auto;
+    margin-right: auto; /* Center align the grid */
+}
+  
+  .icon-grid img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s;
+  }
+  
+  .icon-grid img:hover {
+    transform: scale(1.2);
+  }
+  
+  .skills-text {
+    font-size: 23px;
+    line-height: 1.8;
+    color: #ddd;
+  }
+  
+  .skills-text strong {
+    /* color: #0fb85b; */
+    color: #ff1d61;
+  }
+  /* background: linear-gradient(270deg, #ff004c -5.09%, #ff1d61 106.28%); */

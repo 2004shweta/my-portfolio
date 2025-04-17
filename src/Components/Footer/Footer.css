@@ -37,7 +37,8 @@
     font-size: 20px;
     padding: 22px 50px;
     border-radius: 50px;
-    background: linear-gradient(264deg, #DF8902 -5.09%, #B415FF 106.28%);
+    background: linear-gradient(270deg, #ff004c -5.09%, #ff1d61 106.28%);
+    /* background: linear-gradient(264deg, #DF8902 -5.09%, #B415FF 106.28%); */
     cursor: pointer;
     transition: 0.3s;
 }
@@ -57,4 +58,18 @@
 .footer-subscribe:hover{
     transform: scale(1.1);
     transition: 0.3s;
+}
+@media(max-width:768px){
+    .footer{
+        margin: 50px 70px;
+    }
+    .footer-top{
+        flex-direction: column;
+        gap: 50px;
+    }
+    .footer-bottom{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-bottom: 50px;
+    }
 }

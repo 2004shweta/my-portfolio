@@ -6,6 +6,8 @@ import Services from './Components/Services/Services'
 import MyWork from './Components/MyWork/MyWork'
 import Contact from './Components/Contact/Contact'
 import Footer from './Components/Footer/Footer'
+import FullStackDev from './Components/FullStackDev/FullStackDev'
+
 
 
 const App = () => {
@@ -14,10 +16,14 @@ const App = () => {
       <Navbar/>
       <Hero/>
       <About/>
+      <FullStackDev/>
       <Services/>
       <MyWork/>
       <Contact/>
       <Footer/>
+   
+      
+  
      
     </div>
   )
