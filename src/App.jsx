@@ -10,12 +10,14 @@ import FullStackDev from './Components/FullStackDev/FullStackDev';
 import ChatBot from './Components/ChatBot/ChatBot';
 import ChatToggleButton from './Components/ChatBot/ChatToggleButton'; // 👈 Import the toggle button
 
+
+
 const App = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
-
   const toggleChat = () => {
     setIsChatOpen(prev => !prev);
   };
+ 
 
   return (
     <div>
@@ -27,7 +29,7 @@ const App = () => {
       <MyWork />
       <Contact />
       <Footer />
-
+    
       {isChatOpen && <ChatBot onClose={toggleChat} />}
       <ChatToggleButton toggle={toggleChat} /> {/* 👈 Floating chat button */}
     </div>

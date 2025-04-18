@@ -23,9 +23,9 @@ return (
         </div>
 
         <div className="skills-text">
-            <p>⚡ Building responsive website front end using <strong>ReactJS</strong> and <strong>Angular</strong></p>
+            <p>Building responsive website front end using <strong>ReactJS</strong> and <strong>Angular</strong></p>
             {/* <p>⚡ Developing mobile applications using <strong>Flutter</strong> and native <strong>Android</strong></p> */}
-            <p>⚡ Backend development using the <strong>MERN</strong> stack (MongoDB, ExpressJS, ReactJS, NodeJS)</p>
+            <p>Backend development using the <strong>MERN</strong> stack (MongoDB, ExpressJS, ReactJS, NodeJS)</p>
         </div>
     </div>
 );

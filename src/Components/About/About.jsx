@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react';
 import './About.css';
-
-
-
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -25,12 +22,10 @@ function About() {
 
         <div className="about-right" data-aos="fade-left">
           <div className="about-para">
-            <p>
-              I'm a passionate and detail-oriented Full Stack Developer with a strong foundation in both front-end and back-end technologies. Currently pursuing my B.Tech in Computer Science and Engineering, I enjoy transforming ideas into real-world web applications using tools like JavaScript, Node.js, MongoDB, and modern frameworks.
-            </p>
-            <p>
-              I thrive on solving complex problems, learning new technologies, and building clean, user-friendly interfaces. Whether it's designing a responsive UI or structuring a secure backend, I always aim to deliver efficient and impactful solutions. Beyond coding, I'm a curious learner, a team player, and someone who believes in continuous improvement.
-            </p>
+            <p>Passionate and detail-oriented <strong>Full Stack Developer</strong> with a strong foundation in front-end and back-end technologies
+            Currently pursuing <strong>B.Tech in Computer Science and Engineering</strong>, transforming ideas into real-world web apps using <strong>JavaScript</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and modern frameworks.
+            Skilled at designing responsive UIs and building secure backends — always striving for clean, user-friendly, and efficient solutions.
+            Curious learner, strong team player, and a believer in <strong>continuous improvement</strong>.</p>
           </div>
 
           {/* <div className="about-skills">

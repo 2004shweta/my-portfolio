@@ -68,7 +68,7 @@ const Hero = () => {
   }, []);
 
   const handleResumeClick = () => {
-    window.open("https://www.example.com/my_resume.pdf", "_blank"); // Replace with actual resume link
+    window.open("https://drive.google.com/file/d/1xhlkbY_z_4Ma4POI3KKBBIo3o0QikGxk/view?usp=sharing", "_blank"); // Replace with actual resume link
   };
 
   return (
@@ -88,7 +88,7 @@ const Hero = () => {
           My resume
         </div>
       </div>
-      <div className="hero-icons">
+      <div className="hero-icons ">
         <a href="#"><i className="fab fa-github"></i></a>
         <a href="#"><i className="fab fa-linkedin"></i></a>
         <a href="#"><i className="fab fa-google"></i></a>

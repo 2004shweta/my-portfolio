@@ -1,9 +1,11 @@
 const Services_Data = [
-    {
-        s_no:"01",
-        s_name:"Web design",
-        s_desc:"Web development is the process of building, programming..."
-    },
+    
+        {
+            s_no: "01",
+            s_name: "Full Stack Development",
+            s_desc: "Full Stack Development involves working on both the front-end and back-end of applications, ensuring seamless integration and functionality."
+        }
+    ,
     // {
     //     s_no:"02",
     //     s_name:"Graphics design",

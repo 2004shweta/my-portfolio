@@ -9,7 +9,7 @@
     position: fixed;
     width: 95%;
     top: 0;
-    padding: 15px 30px;
+    padding: 10px 25px;
     z-index: 1000;
     background-color: rgb(30, 30, 30);
     display: flex;
@@ -34,7 +34,7 @@
   padding: 20px 40px;
   border-radius: 50px;
   background: linear-gradient(267deg, hsl(147, 82%, 22%) 0.36%, #23E17A 102.06%);
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -51,7 +51,7 @@
 }
 .nav-menu li p{
     color: #ff004c;
-   font-size: 25px;
+   font-size: 20px;
   font-weight: 500;
 }
 
@@ -60,8 +60,8 @@
   margin: auto;
 }
 .nav-greeting {
-    font-size: 32px;              /* Increased font size */
-  font-weight: 600;             /* Bold text */
+    font-size: 28px;              /* Increased font size */
+  font-weight: 500;             /* Bold text */
   color:  #ff004c;
     animation: fadeIn 1s ease-in-out;
     display: flex;

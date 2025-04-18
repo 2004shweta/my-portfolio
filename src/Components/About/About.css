@@ -1,150 +1,91 @@
-.about{
+.about {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    gap: 80px;
+    gap: 55px;
     margin: 80px 170px;
+    text-align: right;
 }
-.about-title{
+
+.about-title {
     position: relative;
 }
-.about-title h1{
+
+.about-title h1 {
     padding: 0px 30px;
-    font-size: 80px;
-    font-weight: 600;
+    font-size: 70px;
+    font-weight: 500;
     color: #ff1d61;
+    text-align: right;
+    margin-bottom: 2px;
 }
-.about-title img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}
-.about-sections{
+
+.about-sections {
     display: flex;
     gap: 80px;
-
-}
-.about-right{
-    display: flex;
-    flex-direction: column;
-    gap:60px;
-}
-.about-para{
-    display: flex;
-    flex-direction: column;
-    gap:20px;
-    font-size: 24px;
-    font-weight: 500;
-}
-.about-skills{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.about-skill{
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    transition: 0.3s; 
+    justify-content: flex-end;
 }
 
-.about-skill p{
-    min-width: 150px;
-    font-size: 24px;
-    font-weight: 400;
+.about-left {
+    /* Optional styling if you add an image */
 }
-.about-skill hr{
-    outline: none;
-    border: none;
-    width: 50px;
-    height: 8px;
-    border-radius: 50px;
-    background: linear-gradient(267deg, #12964d -5.09%, #23E17A 106.28%);
 
-    /* background: linear-gradient(264deg,#DF8908 -5.09%, #B415FF 106.28% ); */
-}
-.about-achievements{
+.about-right {
     display: flex;
-    width: 100%;
-    justify-content: space-around;
-    margin-bottom: 80px;
+    flex-direction: column;
+    gap: 60px;
+    align-items: flex-end;
 }
-.about-achievement{
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     gap: 10px;
-     transition: 0.5s;
-}
-.about-achievement h1{
-    font-size: 60px;
-    font-weight: 700;
-    background: linear-gradient(267deg, #25DA76 50.41%, #23E17A 90.25%);
-/* background: linear-gradient(270deg, #DF8908 50.41%, #B415FF 90.25%); */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.about-achievement p{
+
+/* Updated bullet-style skill format */
+.about-para {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
     font-size: 22px;
-    font-weight: 500;
-}
-.about-skill:hover{
-    transform: scale(1.12);
-    transition: 0.5s;
+    font-weight: 400;
+    text-align: right;
+    line-height: 1.6;
+    margin-top: 0px;
 }
 
-@media(max-width: 768px){
-    .about{
-        gap: 80px;
+.about-para p::before {
+    /* content: "⚡ "; */
+    margin-left: 6px;
+    color: #25DA76;
+    font-weight: 600;
+}
+
+.about-para strong {
+    color: #ff1d61;
+    font-weight: 600;
+}
+
+@media(max-width: 768px) {
+    .about {
         margin: 50px 70px;
-        align-items: start;
+        align-items: flex-end;
+        text-align: right;
     }
-    .about-title h1{
+
+    .about-title h1 {
         font-size: 50px;
         padding: 0;
     }
-    .about-title h1{
-        font-size: 50px;
-        padding: 0;
-    }
-    .about-title img{
-        width: 130px;
-        right: -20px;
-    }
-    .about-sections{
+
+    .about-sections {
         flex-direction: column;
+        align-items: flex-end;
     }
-    .about-left{
+
+    .about-left {
         display: none;
     }
-    .about-para{
-        font-size:18px;
-        line-height: 32px;
-    }
-    .about-skills{
-        gap:20px;
-        align-items: center;
-    }
-    .about-skill p{
-        font-size: 20px;
-    }
-    .about-skill hr{
-        height: 6px;
-    }
-    .about-achievements{
-        justify-content: space-between;
-    }
-    .about-achievement h1{
-        font-size: 34px;
-        font-weight: 700;
-    }
-    .about-achievement p{
-        text-align: center;
-        font-size: 16px;
-    }
 
-
+    .about-para {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: right;
+    }
 }

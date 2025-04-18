@@ -4,14 +4,15 @@
     align-items: center;
     justify-content: center;
     gap: 80px;
-    margin: 80px 170px;
+    margin: 60px 150px;
 } 
 .contact-title{
     position: relative;
 }
 .contact-title h1{
-    padding: 0px 30px;
-    font-weight: 600;
+    font-size: 65px;
+    /* padding: 0px 35px; */
+    font-weight: 500;
     color: #ff1d61;
 }
 .contact-title img{
@@ -30,8 +31,8 @@
     gap: 30px;
 }
 .contact-left h1{
-    font-size: 80px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 400;
     background: linear-gradient(270deg, #ff004c 80%, #ff1d61 100%);
     /* background: linear-gradient(270deg, #08df57 80%, #22b831 100%); */
     background-clip: text;
@@ -47,14 +48,18 @@
 .contact-details{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 27px;
     color: #D8D8D8;
-    font-size: 22px;
+    font-size: 18px;
 }
 .contact-detail{
     display: flex;
     align-items: center;
     gap: 20px;
+}
+.contact-detail img{
+    width: 22px;
+    height: 20px;
 }
 .contact-right{
     display: flex;
@@ -64,29 +69,30 @@
 }
 .contact-right label{
     color: #D8D8D8;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
 }
 .contact-right input{
     border: none;
-    width: 700px;
-    height: 78px;
+    width: 600px;
+    height: 60px;
     padding-left: 20px;
-    border-radius: 4px;
+    border-radius: 2px;
     background: #32323c;
     color: #A0A0A0;
     font-family: 'Outfit';
-    font-size: 20px;
+    font-size: 18px;
 }
 .contact-right textarea{
-    width: 650px;
+    width: 600px;
+    height: 60px;
     border: none;
-    padding: 25px;
-    border-radius: 4px;
+    padding: 20px;
+    border-radius:2px;
     background: #32323c;
     color: #A0A0A0;
     font-family: 'Outfit';
-    font-size: 20px;
+    font-size: 18px;
 }
 .contact-submit{
     border: none;
@@ -94,8 +100,8 @@
     border-radius: 50px;
     background: linear-gradient(270deg, #ff004c 0%, #ff1d61 100%);
     /* background: linear-gradient(264deg, #DF8908 0%, #B415FF 100%); */
-    font-size: 22px;
-    padding: 20px 60px;
+    font-size: 20px;
+    padding: 12px 45px;
     margin-bottom: 50px;
     cursor: pointer;
     transition: 0.3s;

@@ -41,7 +41,7 @@ const responses = {
   return (
     <div style={styles.chatWindow}>
       <div style={styles.header}>
-        <span>🤖Any Query</span>
+        <span>🤖Any Query?</span>
         <button onClick={onClose} style={styles.closeBtn}>×</button>
       </div>
       <div style={styles.messages}>
