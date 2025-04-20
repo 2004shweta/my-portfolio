@@ -89,11 +89,11 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-icons ">
-        <a href="#"><i className="fab fa-github"></i></a>
-        <a href="#"><i className="fab fa-linkedin"></i></a>
-        <a href="#"><i className="fab fa-google"></i></a>
-        <a href="#"><i className="fab fa-twitter"></i></a>
-        <a href="#"><i className="fab fa-instagram"></i></a>
+        <a href="https://github.com/2004shweta"><i className="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/shweta-jaiswal-b5b538252/"><i className="fab fa-linkedin"></i></a>
+        <a href="jaiswalshweta021"><i className="fab fa-google"></i></a>
+        <a href="https://x.com/ShwetaJais2745"><i className="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/_jaiswalshwetajaiswal"><i className="fab fa-instagram"></i></a>
         {/* <a href="#"><i className="fas fa-code"></i> LeetCode</a>
         <a href="#"><i className="fas fa-book"></i> GeeksforGeeks</a> */}
       </div>
