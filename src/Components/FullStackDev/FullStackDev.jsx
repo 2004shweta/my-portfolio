@@ -15,7 +15,7 @@ const FullStackDev = () => {
         { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", alt: "Git", name: "Git" },
         { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", alt: "MongoDB", name: "MongoDB" },
         { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", alt: "Figma", name: "Figma" },
-        { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg", alt: "Laravel", name: "Laravel" }
+        // { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg", alt: "Laravel", name: "Laravel" }
     ];
 
     const IconSet = () => (
@@ -41,7 +41,7 @@ const FullStackDev = () => {
             </div>
 
             <div className="skills-text">
-                <p>Building responsive website front end using <strong>ReactJS</strong> and <strong>Angular</strong></p>
+                <p>Building responsive website front end using <strong>ReactJS</strong> and <strong>JavaScript</strong></p>
                 {/* <p>⚡ Developing mobile applications using <strong>Flutter</strong> and native <strong>Android</strong></p> */}
                 <p>Backend development using the <strong>MERN</strong> stack (MongoDB, ExpressJS, ReactJS, NodeJS)</p>
             </div>
