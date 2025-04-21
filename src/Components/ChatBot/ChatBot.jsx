@@ -6,6 +6,7 @@ const ChatBot = ({ onClose }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [showRecommendations, setShowRecommendations] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -33,6 +34,13 @@ const ChatBot = ({ onClose }) => {
     "thankyou": "You're welcome! Let me know if there's anything else I can help with.",
   };
 
+  const recommendations = [
+    "Tell me about yourself",
+    "What are your skills?",
+    "What projects have you worked on?",
+    "How can I contact you?"
+  ];
+
   const handleSend = () => {
     const userMessage = input.trim();
     if (!userMessage) return;
@@ -48,7 +56,15 @@ const ChatBot = ({ onClose }) => {
       
       setMessages(prev => [...prev, { type: "bot", text: botReply }]);
       setIsTyping(false);
+
+      // Show recommendations after every bot response
+      setShowRecommendations(true);
     }, 1000);
+  };
+
+  const handleRecommendationClick = (recommendation) => {
+    setInput(recommendation);
+    setShowRecommendations(false);
   };
 
   return (
@@ -86,6 +102,19 @@ const ChatBot = ({ onClose }) => {
             <span style={styles.typingDot}></span>
             <span style={styles.typingDot}></span>
             <span style={styles.typingDot}></span>
+          </div>
+        )}
+        {showRecommendations && (
+          <div style={styles.recommendationsContainer}>
+            {recommendations.map((rec, index) => (
+              <div
+                key={index}
+                style={styles.recommendation}
+                onClick={() => handleRecommendationClick(rec)}
+              >
+                {rec}
+              </div>
+            ))}
           </div>
         )}
       </div>
@@ -219,6 +248,26 @@ const styles = {
     fontSize: "14px",
     fontWeight: "500",
     transition: "all 0.3s ease",
+  },
+  recommendationsContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px',
+    marginTop: '10px',
+    padding: '0 15px',
+  },
+  recommendation: {
+    padding: '8px 12px',
+    backgroundColor: '#2a2a2a',
+    borderRadius: '15px',
+    color: '#ffffff',
+    fontSize: '14px',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+    border: '1px solid #3a3a3a',
+    ':hover': {
+      backgroundColor: '#3a3a3a',
+    },
   },
 };
 

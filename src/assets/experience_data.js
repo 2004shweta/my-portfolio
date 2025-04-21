@@ -5,7 +5,7 @@ const experience_data = [
         duration: "Nov 2024 - Jan 2025",
         description: `Working as an AI intern at Outlier AI, contributing to cutting-edge AI projects and solutions. 
                      Gaining hands-on experience in Python, Java, C++ and AI model development.`,
-        tech: "Python, Java, C++, AI, Data Analysis",
+        tech: "Python, Java, C++, AI",
         link: "#"
     },
     {
