@@ -1,0 +1,129 @@
+.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    margin: 80px 170px;
+    background-color: #000000;
+}
+
+.experience-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.experience-content h2 {
+    font-size: 60px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 40px;
+    position: relative;
+    padding: 0px 30px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.experience-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-4px);
+    border-color: #444;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.experience-info h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.company {
+    font-size: 20px;
+    color: #808080;
+    margin-bottom: 8px;
+}
+
+.duration {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 16px;
+}
+
+.description {
+    color: #808080;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.experience-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #333;
+}
+
+.experience-tech {
+    color: #808080;
+    font-size: 15px;
+}
+
+.experience-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.experience-link:hover {
+    color: #666666;
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .experience {
+        margin: 60px 80px;
+        gap: 60px;
+    }
+
+    .experience-content h2 {
+        font-size: 60px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience {
+        margin: 50px 20px;
+    }
+
+    .experience-content h2 {
+        font-size: 42px;
+    }
+
+    .experience-card {
+        padding: 24px;
+    }
+
+    .experience-info h3 {
+        font-size: 24px;
+    }
+} 

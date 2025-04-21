@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Contact.css';
 import theme_pattern from '../../assets/theme_pattern.svg';
 import mail_icon from '../../assets/mail_icon.svg';
@@ -8,36 +8,65 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function Contact() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+    const [isLoading, setIsLoading] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState({
+        success: false,
+        message: ''
+    });
 
     // Initialize AOS on component mount
     useEffect(() => {
         AOS.init({
-            duration: 1000, // Slow down the animation duration
-            once: true, // Trigger animation only once
+            duration: 1000,
+            once: true,
             easing: 'ease-in-out',
         });
     }, []);
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
     const onSubmit = async (event) => {
         event.preventDefault();
-        const formData = new FormData(event.target);
+        setIsLoading(true);
+        setSubmitStatus({ success: false, message: '' });
 
-        formData.append("access_key", "e11b6e80-2f86-4fac-bd68-6beb3101daff");
+        const formDataToSubmit = new FormData();
+        Object.entries(formData).forEach(([key, value]) => {
+            formDataToSubmit.append(key, value);
+        });
+        formDataToSubmit.append("access_key", "e11b6e80-2f86-4fac-bd68-6beb3101daff");
 
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: JSON.stringify(Object.fromEntries(formDataToSubmit))
+            }).then((res) => res.json());
 
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: json
-        }).then((res) => res.json());
-
-        if (res.success) {
-            alert(res.message);
+            if (res.success) {
+                setSubmitStatus({ success: true, message: res.message });
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                setSubmitStatus({ success: false, message: res.message || 'Something went wrong. Please try again.' });
+            }
+        } catch (error) {
+            setSubmitStatus({ success: false, message: 'Network error. Please try again.' });
+        } finally {
+            setIsLoading(false);
         }
     }
 
@@ -72,15 +101,48 @@ function Contact() {
                 {/* Right Section: Contact Form */}
                 <form onSubmit={onSubmit} className="contact-right" data-aos="fade-right" data-aos-delay="400">
                     <label htmlFor='name'>Your Name</label>
-                    <input type='text' placeholder='Enter your name' name='name' />
+                    <input 
+                        type='text' 
+                        placeholder='Enter your name' 
+                        name='name' 
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                    />
 
                     <label htmlFor='email'>Your Email</label>
-                    <input type='email' placeholder='Enter your email' name='email' />
+                    <input 
+                        type='email' 
+                        placeholder='Enter your email' 
+                        name='email' 
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                    />
 
                     <label htmlFor='message'>Write your message</label>
-                    <textarea name='message' rows="8" placeholder='Enter Your message'></textarea>
+                    <textarea 
+                        name='message' 
+                        rows="8" 
+                        placeholder='Enter Your message'
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                    ></textarea>
 
-                    <button type='submit' className="contact-submit">Submit now</button>
+                    {submitStatus.message && (
+                        <div className={`submit-status ${submitStatus.success ? 'success' : 'error'}`}>
+                            {submitStatus.message}
+                        </div>
+                    )}
+
+                    <button 
+                        type='submit' 
+                        className="contact-submit"
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Submitting...' : 'Submit now'}
+                    </button>
                 </form>
             </div>
         </div>

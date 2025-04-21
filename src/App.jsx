@@ -10,6 +10,8 @@ import FullStackDev from './Components/FullStackDev/FullStackDev';
 import ChatBot from './Components/ChatBot/ChatBot';
 import ChatToggleButton from './Components/ChatBot/ChatToggleButton'; // 👈 Import the toggle button
 import Certificates from './Components/Certificates/Certificates';
+import OpenToWork from './Components/OpenToWork/OpenToWork';
+import Experience from './Components/Experience/Experience';
 
 
 
@@ -27,6 +29,7 @@ const App = () => {
       {/* <About /> */}
       <FullStackDev />
       <Services />
+      <Experience />
       <MyWork />
       <Certificates />
       <Contact />
@@ -34,6 +37,7 @@ const App = () => {
     
       {isChatOpen && <ChatBot onClose={toggleChat} />}
       <ChatToggleButton toggle={toggleChat} /> {/* 👈 Floating chat button */}
+      <OpenToWork />
     </div>
   );
 };

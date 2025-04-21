@@ -145,7 +145,7 @@ const Navbar = () => {
 
   const menuItems = [
     { name: 'Home', link: '#home' },
-    { name: 'About', link: '#about' },
+    { name: 'About', link: '#home' },
     { name: 'Services', link: '#services' },
     { name: 'Portfolio', link: '#work' },
     { name: 'Certificates', link: '#certificates' },
