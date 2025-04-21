@@ -1,70 +1,92 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './About.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 function About() {
+  const [typedText, setTypedText] = useState('');
+  const [currentLine, setCurrentLine] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
+
+  const codeLines = [
+    "const aboutMe = {",
+    "  name: 'Shweta Jaiswal',",
+    "  role: 'Full Stack Developer',",
+    "  education: 'B.Tech in Computer Science',",
+    "  skills: [",
+    "    'JavaScript', 'React', 'Node.js',",
+    "    'MongoDB', 'Express', 'HTML/CSS'",
+    "  ],",
+    "  description: 'Passionate developer focused on creating",
+    "    clean, efficient, and user-friendly solutions.'",
+    "};"
+  ];
+
   useEffect(() => {
     AOS.init({ duration: 1800, once: true });
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (currentLine < codeLines.length) {
+      const line = codeLines[currentLine];
+      let currentIndex = 0;
+      
+      const typingInterval = setInterval(() => {
+        if (currentIndex <= line.length) {
+          setTypedText(prev => prev + line[currentIndex]);
+          currentIndex++;
+        } else {
+          clearInterval(typingInterval);
+          setCurrentLine(prev => prev + 1);
+          setTypedText(prev => prev + '\n');
+        }
+      }, 50);
+
+      return () => clearInterval(typingInterval);
+    }
+  }, [currentLine]);
 
   return (
     <div id="about" className="about">
       <div className="about-title" data-aos="fade-right">
         <h1>About Me</h1>
-        {/* <img src={theme_pattern} alt="Theme Pattern" /> */}
       </div>
 
-      <div className="about-sections">
-        <div className="about-left" data-aos="fade-right">
-          {/* <img src={profile_img} alt="Profile" /> */}
-        </div>
-
-        <div className="about-right" data-aos="fade-left">
-          <div className="about-para">
-            <p>Passionate and detail-oriented <strong>Full Stack Developer</strong> with a strong foundation in front-end and back-end technologies
-            Currently pursuing <strong>B.Tech in Computer Science and Engineering</strong>, transforming ideas into real-world web apps using <strong>JavaScript</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and modern frameworks.
-            Skilled at designing responsive UIs and building secure backends — always striving for clean, user-friendly, and efficient solutions.
-            Curious learner, strong team player, and a believer in <strong>continuous improvement</strong>.</p>
+      <div className="code-editor" data-aos="fade-up">
+        <div className="editor-header">
+          <div className="window-controls">
+            <span className="control close"></span>
+            <span className="control minimize"></span>
+            <span className="control maximize"></span>
           </div>
-
-          {/* <div className="about-skills">
-            <div className="about-skill">
-              <p>HTML & CSS</p>
-              <hr style={{ width: "90%" }} />
-            </div>
-            <div className="about-skill">
-              <p>React JS</p>
-              <hr style={{ width: "80%" }} />
-            </div>
-            <div className="about-skill">
-              <p>NodeJs & MongoDB</p>
-              <hr style={{ width: "80%" }} />
-            </div>
-            <div className="about-skill">
-              <p>MySQL</p>
-              <hr style={{ width: "80%" }} />
-            </div>
-          </div> */}
+          <div className="file-name">about.js</div>
+        </div>
+        <div className="editor-content">
+          <pre className="code">
+            {typedText}
+            {showCursor && <span className="cursor">|</span>}
+          </pre>
+        </div>
+        <div className="terminal">
+          <div className="terminal-header">
+            <span>Terminal</span>
+          </div>
+          <div className="terminal-content">
+            <p className="command-line">
+              <span className="prompt">$</span> npm run dev
+            </p>
+            <p className="output">Starting development server...</p>
+            <p className="output">Compiled successfully!</p>
+          </div>
         </div>
       </div>
-
-      {/* <div className="about-achievements" data-aos="fade-up">
-        <div className="about-achievement">
-          <h1>10+</h1>
-          <p>Years of Experience</p>
-        </div>
-        <hr />
-        <div className="about-achievement">
-          <h1>20</h1>
-          <p>Projects</p>
-        </div>
-        <hr />
-        <div className="about-achievement">
-          <h1>10</h1>
-          <p>Happy Clients</p>
-        </div>
-      </div> */}
     </div>
   );
 }

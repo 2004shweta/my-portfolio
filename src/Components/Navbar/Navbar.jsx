@@ -148,6 +148,7 @@ const Navbar = () => {
     { name: 'About', link: '#about' },
     { name: 'Services', link: '#services' },
     { name: 'Portfolio', link: '#work' },
+    { name: 'Certificates', link: '#certificates' },
     { name: 'Contact', link: '#contact' }
   ];
 
@@ -156,13 +157,13 @@ const Navbar = () => {
       const hour = new Date().getHours();
       if (hour < 12) {
         setGreeting('Good Morning');
-        setEmoji('☀️');
+        setEmoji('</>');
       } else if (hour < 18) {
         setGreeting('Good Afternoon');
-        setEmoji('🌤️');
+        setEmoji('</>');
       } else {
         setGreeting('Good Evening');
-        setEmoji('🌙');
+        setEmoji('</>');
       }
     };
 

@@ -19,8 +19,7 @@ function Footer() {
       {/* Top Footer */}
       <div className="footer-top" data-aos="fade-up">
         <div className="footer-top-left" data-aos="fade-left" data-aos-delay="200">
-          {/* <img src={footer_logo} alt="Footer Logo" /> */}
-          {/* <p>I am Passionate Developer</p> */}
+          <p>Made by Shweta Jaiswal</p>
         </div>
 
         <div className="footer-top-right" data-aos="fade-right" data-aos-delay="400">
@@ -33,9 +32,9 @@ function Footer() {
       </div>
 
       <hr />
-{/* 
-      Bottom Footer */}
-      <div className="footer-bottom" >
+
+      {/* Bottom Footer */}
+      <div className="footer-bottom">
         <p className="footer-bottom-left">© 2025 All rights reserved</p>
 
         <div className="footer-bottom-right">

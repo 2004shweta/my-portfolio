@@ -1,24 +1,90 @@
 .about {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #1a1a1a, #000000);
+    font-family: var(--font-primary);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-content {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-align: left;
+}
+
+.about-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #b3b3b3;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.about-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.skill-tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
     justify-content: center;
-    gap: 55px;
-    margin: 80px 170px;
-    text-align: right;
+    align-items: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .about-title {
     position: relative;
+    width: 100%;
 }
 
 .about-title h1 {
     padding: 0px 30px;
     font-size: 70px;
     font-weight: 500;
-    color: #ff1d61;
-    text-align: right;
-    margin-bottom: 2px;
+    color: #ffffff;
+    text-align: center;
 }
 
 .about-sections {
@@ -27,9 +93,9 @@
     justify-content: flex-end;
 }
 
-.about-left {
+/* .about-left {
     /* Optional styling if you add an image */
-}
+
 
 .about-right {
     display: flex;
@@ -62,30 +128,144 @@
     font-weight: 600;
 }
 
-@media(max-width: 768px) {
+.code-editor {
+    width: 100%;
+    max-width: 900px;
+    background: #121212;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+    margin-right: 12px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #27c93f; }
+
+.file-name {
+    color: #666666;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+}
+
+.editor-content {
+    padding: 20px;
+    font-family: 'Consolas', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #e0e0e0;
+    background: #121212;
+    min-height: 200px;
+}
+
+.code {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background: #ffffff;
+    animation: blink 1s step-end infinite;
+}
+
+.terminal {
+    background: #121212;
+    border-top: 1px solid #2a2a2a;
+    padding: 15px;
+}
+
+.terminal-header {
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: 'Consolas', monospace;
+}
+
+.terminal-content {
+    font-family: 'Consolas', monospace;
+    color: #e0e0e0;
+}
+
+.command-line {
+    margin: 0;
+    color: #4d9375;
+}
+
+.prompt {
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+.output {
+    margin: 5px 0;
+    color: #666666;
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        order: 2;
+    }
+
+    .about-image {
+        order: 1;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
     .about {
-        margin: 50px 70px;
-        align-items: flex-end;
-        text-align: right;
+        padding: 60px 0;
+    }
+
+    .about h2 {
+        font-size: 36px;
+    }
+
+    .about-description {
+        font-size: 16px;
     }
 
     .about-title h1 {
         font-size: 50px;
-        padding: 0;
     }
 
-    .about-sections {
-        flex-direction: column;
-        align-items: flex-end;
+    .code-editor {
+        width: 100%;
     }
 
-    .about-left {
-        display: none;
-    }
-
-    .about-para {
-        font-size: 18px;
-        line-height: 1.6;
-        text-align: right;
+    .editor-content {
+        font-size: 14px;
+        padding: 15px;
     }
 }

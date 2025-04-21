@@ -16,7 +16,7 @@ const styles = {
     width: "60px",
     height: "60px",
     borderRadius: "50%",
-    backgroundColor: " #ff004c",
+    backgroundColor: "rgb(10, 10, 10)",
     color: "white",
     fontSize: "24px",
     border: "none",

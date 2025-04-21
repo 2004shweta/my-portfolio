@@ -1,50 +1,5 @@
-// import React, { useState, useEffect } from 'react';
-// import './Hero.css';
-// import profile_img from '../../assets/profile_img.svg';  // default profile image
-
-// const Hero = () => {
-//   // Dynamic data (you can later replace these with data from props, API, or state)
-//   const [name, setName] = useState("Shweta Jaiswal");
-//   const [role, setRole] = useState("Full Stack Web Developer");
-//   const [description, setDescription] = useState("As a developer in India with hands-on experience in building dynamic web applications, you might be interested in exploring some of the most effective technologies and frameworks that can enhance your projects.");
-  
-//   const [image, setImage] = useState(profile_img); // Dynamically load the profile image (can be from an API or user input)
-
-//   // Effect for dynamic text animations (for example, change role or name)
-//   useEffect(() => {
-//     const roles = ["Full Stack Web Developer", "JavaScript Enthusiast", "Tech Innovator"];
-//     let i = 0;
-
-//     const interval = setInterval(() => {
-//       setRole(roles[i % roles.length]);
-//       i++;
-//     }, 3000); // Change role every 3 seconds
-
-//     return () => clearInterval(interval); // Clear the interval on unmount
-//   }, []);
-
-//   // Handle resume download or redirection (dummy behavior here)
-//   const handleResumeClick = () => {
-//     window.open("https://www.example.com/my_resume.pdf", "_blank"); // Replace with actual resume link
-//   };
-
-//   return (
-//     <div id="home" className="hero">
-//       {/* <img src={image} alt="Profile" /> */}
-//       <h1><span>I am {name}</span>, {role}</h1>
-//       <p>{description}</p>
-//       <div className="hero-action">
-//         <div className="hero-connect" onClick={() => window.location.href = 'mailto:jaiswalshweta021@gmail.com'}>Connect with me</div>
-//         <div className="hero-resume" onClick={handleResumeClick}>My resume</div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Hero;
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import profile_img from '../../assets/profile_img.svg'; // default profile image
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Hero = () => {
@@ -53,7 +8,49 @@ const Hero = () => {
   const [description, setDescription] = useState(
     "Based in India, I specialize in creating dynamic web applications using cutting-edge technologies and frameworks to deliver impactful solutions."
   );
-  const [image, setImage] = useState(profile_img);
+  const [codeContent, setCodeContent] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+  const [showCvDropdown, setShowCvDropdown] = useState(false);
+
+  const codeToType = `// Profile Configuration
+class DeveloperProfile {
+  constructor() {
+    this.name = "Shweta Jaiswal";
+    this.role = "Full Stack Developer";
+    this.education = "B.Tech CSE, LPU (2026)";
+    this.stack = ["JavaScript", "React", "Node.js", "MongoDB", "Express", "HTML/CSS", "Algorithms", "UI/UX", "REST APIs"];
+    this.achievements = [
+      "Top 4% in GirlScript Summer of Code 2024",
+      "National Chess Champion (SGFI)",
+      "300+ DSA Problems Solved"
+    ];
+    this.status = {
+      openToWork: true,
+      availableFor: ["Full-time", "Internship", "Freelance"]
+    };
+  }
+
+  getDescription() {
+    return "Passionate developer building scalable web solutions. Always learning and competing.";
+  }
+}
+
+const profile = new DeveloperProfile();`;
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= codeToType.length) {
+        setCodeContent(codeToType.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        setIsTyping(false);
+        clearInterval(typingInterval);
+      }
+    }, 30);
+
+    return () => clearInterval(typingInterval);
+  }, []);
 
   useEffect(() => {
     const roles = ["Full Stack Web Developer", "JavaScript Enthusiast", "Tech Innovator"];
@@ -68,36 +65,95 @@ const Hero = () => {
   }, []);
 
   const handleResumeClick = () => {
-    window.open("https://drive.google.com/file/d/1xhlkbY_z_4Ma4POI3KKBBIo3o0QikGxk/view?usp=sharing", "_blank"); // Replace with actual resume link
+    setShowCvDropdown(!showCvDropdown);
+  };
+
+  const handleCvSelect = (cvType) => {
+    const cvLinks = {
+      specialized: "https://drive.google.com/file/d/1xhlkbY_z_4Ma4POI3KKBBIo3o0QikGxk/view?usp=sharing",
+      general: "YOUR_GENERAL_CV_LINK_HERE" // Replace with your general CV link
+    };
+    window.open(cvLinks[cvType], "_blank");
+    setShowCvDropdown(false);
   };
 
   return (
-    <div id="home" className="hero">
-      <div className="hero-img">
-        {/* <img src={image} alt="Profile" /> */}
-      </div>
-
-      <h1><span>I am {name}</span>, {role}</h1>
-      <p>{description}</p>
-
-      <div className="hero-action">
-        <div className="hero-connect" onClick={() => window.location.href = 'mailto:jaiswalshweta021@gmail.com'}>
-          Connect with me
+    <section id="home" className="hero">
+      <div className="hero-container">
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1 className="hero-title">
+              <span className="hero-greeting">Hi, I'm</span>
+              <span className="hero-name">{name}</span>
+              <span className="hero-role">{role}</span>
+            </h1>
+            <p className="hero-description">{description}</p>
+            <div className="hero-actions">
+              <button 
+                className="hero-button primary-button" 
+                onClick={() => window.location.href = 'mailto:jaiswalshweta021@gmail.com'}
+              >
+                <i className="fas fa-envelope"></i> Connect with me
+              </button>
+              <div className="cv-dropdown-container">
+                <button 
+                  className="hero-button secondary-button" 
+                  onClick={handleResumeClick}
+                >
+                  <i className="fas fa-file-alt"></i> View Resume
+                </button>
+                {showCvDropdown && (
+                  <div className="cv-dropdown">
+                    <button onClick={() => handleCvSelect('specialized')}>
+                      <i className="fas fa-code"></i> Specialized CV
+                    </button>
+                    <button onClick={() => handleCvSelect('general')}>
+                      <i className="fas fa-file"></i> General CV
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="hero-social">
+              <a href="https://github.com/2004shweta" target="_blank" rel="noopener noreferrer" className="social-link">
+                <i className="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/shweta-jaiswal-b5b538252/" target="_blank" rel="noopener noreferrer" className="social-link">
+                <i className="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:jaiswalshweta021@gmail.com" target="_blank" rel="noopener noreferrer" className="social-link">
+                <i className="fab fa-google"></i>
+              </a>
+              <a href="https://x.com/ShwetaJais2745" target="_blank" rel="noopener noreferrer" className="social-link">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/_jaiswalshwetajaiswal" target="_blank" rel="noopener noreferrer" className="social-link">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div className="about-section">
+            <h2>About Me</h2>
+            <div className="code-editor">
+              <div className="editor-header">
+                <div className="window-controls">
+                  <div className="control close"></div>
+                  <div className="control minimize"></div>
+                  <div className="control maximize"></div>
+                </div>
+                <div className="file-name">profile.js</div>
+              </div>
+              <div className="editor-content">
+                <pre className="code">
+                  {codeContent}
+                  {isTyping && <span className="cursor">|</span>}
+                </pre>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="hero-resume" onClick={handleResumeClick}>
-          My resume
-        </div>
       </div>
-      <div className="hero-icons ">
-        <a href="https://github.com/2004shweta"><i className="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/shweta-jaiswal-b5b538252/"><i className="fab fa-linkedin"></i></a>
-        <a href="jaiswalshweta021"><i className="fab fa-google"></i></a>
-        <a href="https://x.com/ShwetaJais2745"><i className="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/_jaiswalshwetajaiswal"><i className="fab fa-instagram"></i></a>
-        {/* <a href="#"><i className="fas fa-code"></i> LeetCode</a>
-        <a href="#"><i className="fas fa-book"></i> GeeksforGeeks</a> */}
-      </div>
-    </div>
+    </section>
   );
 };
 

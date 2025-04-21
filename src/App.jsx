@@ -9,6 +9,7 @@ import Footer from './Components/Footer/Footer';
 import FullStackDev from './Components/FullStackDev/FullStackDev';
 import ChatBot from './Components/ChatBot/ChatBot';
 import ChatToggleButton from './Components/ChatBot/ChatToggleButton'; // 👈 Import the toggle button
+import Certificates from './Components/Certificates/Certificates';
 
 
 
@@ -23,10 +24,11 @@ const App = () => {
     <div>
       <Navbar />
       <Hero />
-      <About />
+      {/* <About /> */}
       <FullStackDev />
       <Services />
       <MyWork />
+      <Certificates />
       <Contact />
       <Footer />
     

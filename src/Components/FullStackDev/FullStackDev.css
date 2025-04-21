@@ -1,52 +1,174 @@
 .fullstack-container {
-  background-color: #1e1e1e;
-  padding: 50px;
+  background-color: #1a1a1a;
+  padding: 25px 50px 50px 50px;
   border-radius: 20px;
-  color: #ff1d61;
-  text-align: left; /* Align text to the left */
+  color: #ffffff;
+  text-align: center;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align inner elements to the left */
+  align-items: center;
+  border: 1px solid #2a2a2a;
+  position: relative;
+  overflow: hidden;
 }
 
 .fullstack-container h1 {
   font-size: 70px;
   font-weight: 400;
-  color: #ff1d61;
+  color: #ffffff;
   text-align: left;
-  margin-bottom: 55px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  background: linear-gradient(270deg, #ffffff 10%, #666666 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  animation: fadeIn 1s ease-in;
+}
+
+.icon-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
+  margin: 0 0 40px 0;
+}
+
+.scroll-container {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
 }
 
 .icon-grid {
   display: flex;
-  flex-wrap: wrap;
-  align-items: left;
-  justify-content: flex-start; /* Align icons to the left */
-  gap: 35px;
-  margin-bottom: 30px;
-  max-width: 800px;
-  margin-left: 0;  /* Align grid to the left */
-  margin-right: auto;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  width: max-content;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Add hover pause effect */
+.icon-container:hover .scroll-container {
+  animation-play-state: paused;
+}
+
+.icon-grid > div {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  transition: transform 0.3s ease;
+}
+
+.icon-grid > div:hover {
+  transform: scale(1.1);
 }
 
 .icon-grid img {
   width: 50px;
   height: 50px;
-  transition: transform 0.3s;
+  margin-bottom: 15px;
+  filter: brightness(1);
 }
 
-.icon-grid img:hover {
-  transform: scale(1.2);
+.icon-grid p {
+  margin: 0;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 500;
 }
 
 .skills-text {
   font-size: 23px;
   line-height: 1.8;
-  color: #ddd;
+  color: #e0e0e0;
   text-align: left; /* Align paragraph text to the left */
+  animation: slideIn 1s ease-out;
 }
 
 .skills-text strong {
-  color: #ff1d61;
+  color: #ffffff;
+  background: linear-gradient(270deg, #ffffff 10%, #666666 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes iconAppear {
+  from { 
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to { 
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
+
+@media (max-width: 768px) {
+  .fullstack-container {
+    padding: 30px;
+    margin: 20px;
+  }
+
+  .fullstack-container h1 {
+    font-size: 50px;
+  }
+
+  .skills-text {
+    font-size: 18px;
+  }
+
+  .icon-grid {
+    gap: 25px;
+  }
+
+  .icon-grid img {
+    width: 40px;
+    height: 40px;
+  }
 }
