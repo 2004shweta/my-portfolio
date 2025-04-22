@@ -139,9 +139,8 @@ const Navbar = () => {
   const [menu, setMenu] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [greeting, setGreeting] = useState('');
-  const [time, setTime] = useState('');
   const [emoji, setEmoji] = useState('☀️');
-  const [scrolled, setScrolled] = useState(false); // 🔥 New state for scroll
+  const [scrolled, setScrolled] = useState(false);
 
   const menuItems = [
     { name: 'Home', link: '#home' },
@@ -167,19 +166,9 @@ const Navbar = () => {
       }
     };
 
-    const updateTime = () => {
-      const now = new Date();
-      setTime(now.toLocaleTimeString());
-    };
-
     updateGreeting();
-    updateTime();
-    const timeInterval = setInterval(updateTime, 1000);
-
-    return () => clearInterval(timeInterval);
   }, []);
 
-  // 🔥 Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -193,7 +182,6 @@ const Navbar = () => {
     <div className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="nav-greeting">
         <span className="emoji">{emoji}</span> Hello, {greeting}!
-        <span className="clock">{time}</span>
       </div>
 
       <img src={menu_open} alt='Open Menu' className='nav-mob-open' onClick={() => setIsMenuOpen(true)} />
