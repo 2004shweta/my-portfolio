@@ -16,19 +16,19 @@ function Certificates() {
     {
       title: 'Data Structures and Algorithms (Self-Paced)',
       issuer: 'GeeksforGeeks',
-      date: '2023',
+      date: '2024',
       link: 'https://drive.google.com/file/d/1tpoyRJKEUsDAgRdAL6ZsOAQB-MwZbWmD/view?usp=sharing'
     },
     {
       title: 'Server-side JavaScript with Node.js',
       issuer: 'Coursera',
-      date: '2023',
+      date: '2024',
       link: 'https://coursera.org/share/0ede09445285ee69fc1f5ecf44a3d288'
     },
     {
       title: 'Cloud Computing Concepts',
       issuer: 'NPTEL',
-      date: '2023',
+      date: '2024',
       link: 'https://drive.google.com/file/d/1wewl6PsdRX_Qk4hFQifJNmYMqqPBRHR-/view?usp=sharing'
     }
   ];
