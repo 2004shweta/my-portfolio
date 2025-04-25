@@ -146,7 +146,7 @@ const Navbar = () => {
     { name: 'Home', link: '#home' },
     { name: 'About', link: '#home' },
     { name: 'Services', link: '#services' },
-    { name: 'Portfolio', link: '#work' },
+    { name: 'Projects', link: '#work' },
     { name: 'Certificates', link: '#certificates' },
     { name: 'Contact', link: '#contact' }
   ];
