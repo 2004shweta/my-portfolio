@@ -71,7 +71,7 @@ const profile = new DeveloperProfile();`;
   const handleCvSelect = (cvType) => {
     const cvLinks = {
       specialized: "https://drive.google.com/file/d/1vXhTLUvBFzy2_lNeCkD2BiReMnAU_694/view?usp=sharing",
-      general: "https://drive.google.com/file/d/1xhlkbY_z_4Ma4POI3KKBBIo3o0QikGxk/view?usp=sharing" // Replace with your general CV link
+      general: "https://drive.google.com/file/d/1yZiNUbdoGBP8aSgUCaI6P91mNMmM0F5i/view?usp=sharing" // Replace with your general CV link
     };
     window.open(cvLinks[cvType], "_blank");
     setShowCvDropdown(false);
