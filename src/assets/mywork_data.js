@@ -23,14 +23,14 @@ const mywork_data = [
         w_tech: "JavaScript, ReactJS, HTML, CSS ",
         w_link: "#"
     },
-    {
-        w_no: 3,
-        w_name: "Tic-Tac-Toe",
-        w_img: project3_img,
-        w_desc: `Created a real-time multiplayer Tic-Tac-Toe game using Reactjs, allowing users to play against each other online.`,
-        w_tech: "ReactJS, HTML, CSS, JavaScript",
-        w_link: "https://github.com/2004shweta/Tic-Tac-Toe-_React"
-    }
+    // {
+    //     w_no: 3,
+    //     w_name: "Tic-Tac-Toe",
+    //     w_img: project3_img,
+    //     w_desc: `Created a real-time multiplayer Tic-Tac-Toe game using Reactjs, allowing users to play against each other online.`,
+    //     w_tech: "ReactJS, HTML, CSS, JavaScript",
+    //     w_link: "https://github.com/2004shweta/Tic-Tac-Toe-_React"
+    // }
 ];
 
 export default mywork_data;
