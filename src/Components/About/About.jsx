@@ -14,7 +14,7 @@ function About() {
     "  role: 'Full Stack Developer',",
     "  education: 'B.Tech in Computer Science',",
     "  skills: [",
-    "    'JavaScript', 'React', 'Node.js',",
+    "    'JavaScript', 'React', 'Next.js', 'Node.js',",
     "    'MongoDB', 'Express', 'HTML/CSS'",
     "  ],",
     "  description: 'Passionate developer focused on creating",
@@ -95,6 +95,7 @@ function About() {
           {[
             { name: 'JavaScript', level: 90 },
             { name: 'React', level: 85 },
+            { name: 'Next.js', level: 80 },
             { name: 'Node.js', level: 80 },
             { name: 'MongoDB', level: 75 },
             { name: 'Express', level: 75 },

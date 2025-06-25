@@ -93,6 +93,7 @@ const profile = new DeveloperProfile();`;
               {[
                 "JavaScript",
                 "React",
+                "Next.js",
                 "Node.js",
                 "MongoDB",
                 "Express",
