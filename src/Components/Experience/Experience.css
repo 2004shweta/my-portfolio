@@ -1,129 +1,117 @@
 .experience {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 80px;
-    margin: 80px 170px;
-    background-color: #000000;
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--background-color), var(--card-background));
+  font-family: var(--font-primary);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.experience-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+.experience-title {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.experience-content h2 {
-    font-size: 50px;
-    font-weight: 500;
-    color: #ffffff;
-    margin-bottom: 40px;
-    position: relative;
-    padding: 0px 30px;
+.experience-title h1 {
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--text-color);
+  background: linear-gradient(90deg, var(--text-color) 10%, var(--secondary-text-color) 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  letter-spacing: -2px;
+  margin: 0;
 }
 
-.experience-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 30px;
+  border-left: 3px solid var(--secondary-text-color);
+  max-width: 700px;
 }
 
-.experience-card {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 16px;
-    padding: 32px;
-    transition: all 0.3s ease;
+.timeline-event {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 40px;
 }
 
-.experience-card:hover {
-    transform: translateY(-4px);
-    border-color: #444;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.timeline-dot {
+  position: absolute;
+  left: -13px;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--secondary-text-color);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.15);
+  z-index: 2;
 }
 
-.experience-info h3 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 12px;
+.timeline-card {
+  background: var(--card-background);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px 0 rgba(59, 130, 246, 0.10);
+  border: 1.5px solid var(--border-color);
+  padding: 24px 28px 20px 28px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-left: 0;
+  min-width: 250px;
+  max-width: 500px;
 }
 
-.company {
-    font-size: 20px;
-    color: #808080;
-    margin-bottom: 8px;
+.timeline-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.13);
+  border-color: var(--secondary-text-color);
 }
 
-.duration {
-    font-size: 16px;
-    color: #666666;
-    margin-bottom: 16px;
+.timeline-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 6px;
 }
 
-.description {
-    color: #808080;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    font-size: 16px;
+.timeline-card .company {
+  font-size: 15px;
+  color: var(--secondary-text-color);
+  font-weight: 600;
+  margin-bottom: 2px;
 }
 
-.experience-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 1px solid #333;
+.timeline-card .date {
+  font-size: 13px;
+  color: #7da7f7;
+  margin-bottom: 12px;
+  font-weight: 500;
 }
 
-.experience-tech {
-    color: #808080;
-    font-size: 15px;
+.timeline-card .description {
+  font-size: 15px;
+  color: var(--text-color);
+  margin-bottom: 0;
+  line-height: 1.6;
 }
 
-.experience-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    transition: color 0.3s ease;
-}
-
-.experience-link:hover {
-    color: #666666;
-    text-decoration: underline;
-}
-
-@media (max-width: 1200px) {
-    .experience {
-        margin: 60px 80px;
-        gap: 60px;
-    }
-
-    .experience-content h2 {
-        font-size: 60px;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .experience {
-        margin: 50px 20px;
-    }
-
-    .experience-content h2 {
-        font-size: 42px;
-    }
-
-    .experience-card {
-        padding: 24px;
-    }
-
-    .experience-info h3 {
-        font-size: 24px;
-    }
+@media (max-width: 700px) {
+  .experience {
+    padding: 40px 0;
+  }
+  .timeline {
+    padding-left: 18px;
+    max-width: 98vw;
+  }
+  .timeline-card {
+    padding: 18px 10px 16px 16px;
+    min-width: 0;
+    max-width: 95vw;
+  }
+  .experience-title h1 {
+    font-size: 26px;
+  }
 } 

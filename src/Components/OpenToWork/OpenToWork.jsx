@@ -55,9 +55,6 @@ const OpenToWork = () => {
               </ul>
               <p className="contact-text">Feel free to reach out for potential collaborations!</p>
               <div className="popup-actions">
-                <a href="#contact" className="contact-button" onClick={togglePopup}>
-                  Contact Me
-                </a>
               </div>
             </div>
           </div>

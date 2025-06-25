@@ -6,6 +6,12 @@
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   --font-mono: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+  --background-color: #ffffff;
+  --text-color: #1E40AF;
+  --secondary-text-color: #3B82F6;
+  --border-color: #DBEAFE;
+  --card-background: #EFF6FF;
+  --hover-color: #DBEAFE;
 }
 
 * {
@@ -17,15 +23,17 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 body {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 code, pre {

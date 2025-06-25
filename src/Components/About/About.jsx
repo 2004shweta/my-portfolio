@@ -59,6 +59,7 @@ function About() {
         <h1>About Me</h1>
       </div>
 
+      {/*
       <div className="code-editor" data-aos="fade-up">
         <div className="editor-header">
           <div className="window-controls">
@@ -85,6 +86,29 @@ function About() {
             <p className="output">Starting development server...</p>
             <p className="output">Compiled successfully!</p>
           </div>
+        </div>
+      </div>
+      */}
+      <div className="about-skills" data-aos="fade-up">
+        <h2>Skills</h2>
+        <div className="skills-list">
+          {[
+            { name: 'JavaScript', level: 90 },
+            { name: 'React', level: 85 },
+            { name: 'Node.js', level: 80 },
+            { name: 'MongoDB', level: 75 },
+            { name: 'Express', level: 75 },
+            { name: 'HTML', level: 95 },
+            { name: 'CSS', level: 90 },
+          ].map(skill => (
+            <div className="skill-bar" key={skill.name}>
+              <span className="skill-name">{skill.name}</span>
+              <div className="progress-bar">
+                <div className="progress" style={{width: `${skill.level}%`}}></div>
+              </div>
+              <span className="skill-level">{skill.level}%</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

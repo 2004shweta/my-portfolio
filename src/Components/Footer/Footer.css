@@ -3,8 +3,9 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color: #000000;
+    background-color: var(--background-color);
     padding: 20px 0;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-top {
@@ -14,8 +15,8 @@
 }
 
 .footer-top-left p {
-    font-size: 16px;
-    color: #e0e0e0;
+    font-size: 15px;
+    color: var(--text-color);
     font-weight: 500;
 }
 
@@ -30,41 +31,45 @@
     gap: 15px;
     padding: 10px 20px;
     border-radius: 40px;
-    background: #121212;
+    background: var(--card-background);
     padding-right: 60px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--border-color);
 }
 
 .footer-email-input input {
     outline: none;
     border: none;
-    background: #121212;
-    color: #e0e0e0;
-    font-family: 'Outfit';
-    font-size: 16px;
+    background: var(--card-background);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .footer-subscribe {
-    font-size: 16px;
+    font-size: 15px;
     padding: 10px 20px;
     border-radius: 45px;
-    background: linear-gradient(270deg, #1a1a1a -5.09%, #2a2a2a 106.28%);
-    color: #ffffff;
+    background: linear-gradient(270deg, var(--card-background) -5.09%, var(--hover-color) 106.28%);
+    color: var(--text-color);
     cursor: pointer;
     transition: 0.3s;
+    border: 1px solid var(--border-color);
+    font-weight: 500;
 }
 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 16px;
-    color: #e0e0e0;
+    font-size: 15px;
+    color: var(--text-color);
     margin-top: 10px;
+    font-weight: 500;
 }
 
 .footer-bottom-left {
-    color: #e0e0e0;
+    color: var(--text-color);
 }
 
 .footer-bottom-right {
@@ -73,24 +78,28 @@
 }
 
 .footer-email-input:hover {
-    border: 1px solid #ffffff;
+    border: 1px solid var(--text-color);
 }
 
 .footer-subscribe:hover {
     transform: scale(1.1);
-    background: linear-gradient(270deg, #2a2a2a -5.09%, #1a1a1a 106.28%);
+    background: linear-gradient(270deg, var(--hover-color) -5.09%, var(--card-background) 106.28%);
 }
 
 hr {
     border: none;
     height: 1px;
-    background-color: #2a2a2a;
+    background-color: var(--border-color);
     margin: 10px 0;
+}
+
+.footer-top-left p, .footer-bottom, .footer-email-input input, .footer-subscribe {
+    font-size: 12px;
 }
 
 @media(max-width: 768px) {
     .footer {
-        margin: 20px 20px;
+        margin: 20px;
     }
     
     .footer-top {
@@ -101,7 +110,7 @@ hr {
     
     .footer-bottom {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         text-align: center;
     }
     
@@ -112,6 +121,10 @@ hr {
     
     .footer-email-input {
         width: 100%;
-        padding-right: 20px;
+        justify-content: center;
+    }
+    
+    .footer-top-left p, .footer-bottom, .footer-email-input input, .footer-subscribe {
+        font-size: 13px;
     }
 }

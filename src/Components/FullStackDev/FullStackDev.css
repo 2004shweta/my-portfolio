@@ -1,26 +1,26 @@
 .fullstack-container {
-  background-color: #1a1a1a;
+  background-color: var(--card-background);
   padding: 25px 50px 50px 50px;
   border-radius: 20px;
-  color: #ffffff;
+  color: var(--text-color);
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #2a2a2a;
+  border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
 }
 
 .fullstack-container h1 {
-  font-size: 70px;
-  font-weight: 400;
-  color: #ffffff;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-color);
   text-align: left;
   margin-top: 0;
   margin-bottom: 20px;
-  background: linear-gradient(270deg, #ffffff 10%, #666666 100%);
+  background: linear-gradient(270deg, var(--text-color) 10%, var(--secondary-text-color) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -65,7 +65,7 @@
 }
 
 .icon-grid > div {
-  background: rgba(30, 30, 30, 0.9);
+  background: var(--background-color);
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -74,6 +74,7 @@
   justify-content: center;
   min-width: 120px;
   transition: transform 0.3s ease;
+  border: 1px solid var(--border-color);
 }
 
 .icon-grid > div:hover {
@@ -89,22 +90,22 @@
 
 .icon-grid p {
   margin: 0;
-  font-size: 16px;
-  color: #ffffff;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 
 .skills-text {
-  font-size: 23px;
+  font-size: 18px;
   line-height: 1.8;
-  color: #e0e0e0;
+  color: var(--secondary-text-color);
   text-align: left; /* Align paragraph text to the left */
   animation: slideIn 1s ease-out;
 }
 
 .skills-text strong {
-  color: #ffffff;
-  background: linear-gradient(270deg, #ffffff 10%, #666666 100%);
+  color: var(--text-color);
+  background: linear-gradient(270deg, var(--text-color) 10%, var(--secondary-text-color) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -156,11 +157,11 @@
   }
 
   .fullstack-container h1 {
-    font-size: 50px;
+    font-size: 22px;
   }
 
   .skills-text {
-    font-size: 18px;
+    font-size: 13px;
   }
 
   .icon-grid {
@@ -170,5 +171,9 @@
   .icon-grid img {
     width: 40px;
     height: 40px;
+  }
+
+  .icon-grid p {
+    font-size: 11px;
   }
 }
