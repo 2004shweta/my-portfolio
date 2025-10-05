@@ -115,4 +115,9 @@
     transform: translateY(-1px);
   }
 
+  /* Hide the first menu item (Home) on mobile */
+  .nav-menu li:first-child {
+    display: none;
+  }
+
 }
