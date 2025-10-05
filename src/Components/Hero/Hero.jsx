@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import DeveloperGirlImg from '../../assets/Website-Developer-Girl-Character-Illustration-700.webp';
+ 
 
 const Hero = () => {
   const [name, setName] = useState("Shweta Jaiswal");
@@ -9,49 +9,7 @@ const Hero = () => {
   const [description, setDescription] = useState(
     "Based in India, I specialize in creating dynamic web applications using cutting-edge technologies and frameworks to deliver impactful solutions."
   );
-  const [codeContent, setCodeContent] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
   const [showCvDropdown, setShowCvDropdown] = useState(false);
-
-  const codeToType = `// Profile Configuration
-class DeveloperProfile {
-  constructor() {
-    this.name = "Shweta Jaiswal";
-    this.role = "Full Stack Developer";
-    this.education = "B.Tech CSE, LPU (2026)";
-    this.stack = ["JavaScript", "React", "Node.js", "MongoDB", "Express", "HTML/CSS", "Algorithms", "UI/UX", "REST APIs"];
-    this.achievements = [
-      "Top 4% in GirlScript Summer of Code 2024",
-      "National Chess Champion (SGFI)",
-      "300+ DSA Problems Solved"
-    ];
-    this.status = {
-      openToWork: true,
-      availableFor: ["Full-time", "Internship", "Freelance"]
-    };
-  }
-
-  getDescription() {
-    return "Passionate developer building scalable web solutions. Always learning and competing.";
-  }
-}
-
-const profile = new DeveloperProfile();`;
-
-  useEffect(() => {
-    let currentIndex = 0;
-    const typingInterval = setInterval(() => {
-      if (currentIndex <= codeToType.length) {
-        setCodeContent(codeToType.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        setIsTyping(false);
-        clearInterval(typingInterval);
-      }
-    }, 30);
-
-    return () => clearInterval(typingInterval);
-  }, []);
 
   useEffect(() => {
     const roles = ["Full Stack Web Developer", "JavaScript Enthusiast", "Tech Innovator"];
@@ -85,7 +43,10 @@ const profile = new DeveloperProfile();`;
           <div className="hero-text">
             <h1 className="hero-title">
               <span className="hero-greeting">Hi, I'm</span>
-              <span className="hero-name">{name}</span>
+              <span className="hero-name">
+                <span className="hero-first-name">Shweta</span>
+                <span className="hero-last-name"> Jaiswal</span>
+              </span>
               <span className="hero-role">{role}</span>
             </h1>
             <p className="hero-description">{description}</p>
@@ -155,13 +116,7 @@ const profile = new DeveloperProfile();`;
               </a>
             </div>
           </div>
-          <div className="hero-image-container">
-            <img
-              src={DeveloperGirlImg}
-              alt="Animated Developer Girl"
-              className="hero-animated-image"
-            />
-          </div>
+          
         </div>
       </div>
     </section>

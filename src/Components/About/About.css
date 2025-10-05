@@ -1,9 +1,22 @@
 .about {
-    padding: 60px 0;
-    background: linear-gradient(180deg, var(--background-color), var(--card-background));
+    padding: 100px 0;
+    background: transparent;
     font-family: var(--font-primary);
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: var(--gradient-primary);
+    opacity: 0.3;
 }
 
 .about-container {
@@ -41,11 +54,36 @@
 }
 
 .about-skills {
-    margin-top: 2.5rem;
-    background: rgba(255,255,255,0.07);
-    border-radius: 1.2rem;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    margin-top: 3rem;
+    background: var(--card-background);
+    border-radius: var(--radius-2xl);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+}
+
+.about-skills h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .skills-list {
@@ -58,30 +96,57 @@
 .skill-bar {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.skill-bar:hover {
+    transform: translateX(5px);
 }
 
 .skill-name {
-    min-width: 90px;
+    min-width: 100px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-color);
+    font-size: 0.95rem;
 }
 
 .progress-bar {
     flex: 1;
-    background: rgba(255,255,255,0.13);
-    border-radius: 1rem;
-    height: 14px;
+    background: var(--background-color);
+    border-radius: var(--radius-full);
+    height: 8px;
     overflow: hidden;
     margin: 0 0.5rem;
+    border: 1px solid var(--border-color);
+    position: relative;
 }
 
 .progress {
-    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+    background: var(--gradient-primary);
     height: 100%;
-    border-radius: 1rem;
+    border-radius: var(--radius-full);
     width: 0;
-    animation: growBar 1.2s forwards;
+    animation: growBar 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    position: relative;
+    box-shadow: var(--shadow-glow);
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 @keyframes growBar {
@@ -90,10 +155,15 @@
 }
 
 .skill-level {
-    color: #00c6ff;
-    font-weight: 500;
-    min-width: 40px;
+    color: var(--accent-color);
+    font-weight: 600;
+    min-width: 45px;
     text-align: right;
+    font-size: 0.9rem;
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .about-image {
@@ -117,18 +187,31 @@
 
 .about-title h1 {
     font-family: var(--font-heading);
-    font-size: 44px;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 900;
     color: var(--text-color);
     text-align: center;
-    background: linear-gradient(90deg, var(--text-color) 10%, var(--secondary-text-color) 90%);
+    background: var(--gradient-text);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
     letter-spacing: -2px;
-    text-shadow: 0 6px 32px rgba(59, 130, 246, 0.10);
+    text-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     animation: fadeInDown 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.about-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
 }
 
 @keyframes fadeInDown {
@@ -260,7 +343,7 @@
 
 .command-line {
     margin: 0;
-    color: #3B82F6;
+    color: var(--accent-color);
 }
 
 .prompt {

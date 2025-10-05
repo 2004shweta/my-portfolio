@@ -1,9 +1,22 @@
 .experience {
-  padding: 80px 0;
-  background: linear-gradient(180deg, var(--background-color), var(--card-background));
+  padding: 100px 0;
+  background: transparent;
   font-family: var(--font-primary);
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+}
+
+.experience::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: var(--gradient-primary);
+  opacity: 0.3;
 }
 
 .experience-title {
@@ -12,24 +25,37 @@
 }
 
 .experience-title h1 {
-  font-size: 38px;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 900;
   color: var(--text-color);
-  background: linear-gradient(90deg, var(--text-color) 10%, var(--secondary-text-color) 90%);
+  background: var(--gradient-text);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
   letter-spacing: -2px;
   margin: 0;
+  position: relative;
+}
+
+.experience-title h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
 }
 
 .timeline {
   position: relative;
   margin: 0 auto;
   padding-left: 30px;
-  border-left: 3px solid var(--secondary-text-color);
+  border-left: 2px dashed var(--border-color);
   max-width: 700px;
+  padding-right: 20px;
 }
 
 .timeline-event {
@@ -40,21 +66,21 @@
 
 .timeline-dot {
   position: absolute;
-  left: -13px;
+  left: -12px;
   top: 0;
-  width: 22px;
-  height: 22px;
-  background: var(--secondary-text-color);
+  width: 18px;
+  height: 18px;
+  background: var(--accent-color);
   border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 2px 8px rgba(59,130,246,0.15);
+  border: 3px solid var(--card-background);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.15);
   z-index: 2;
 }
 
 .timeline-card {
   background: var(--card-background);
   border-radius: 14px;
-  box-shadow: 0 4px 18px 0 rgba(59, 130, 246, 0.10);
+  box-shadow: 0 4px 18px 0 rgba(2, 6, 23, 0.45);
   border: 1.5px solid var(--border-color);
   padding: 24px 28px 20px 28px;
   position: relative;
@@ -65,9 +91,9 @@
 }
 
 .timeline-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.13);
-  border-color: var(--secondary-text-color);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.15);
+  border-color: var(--accent-color);
 }
 
 .timeline-card h3 {
@@ -86,9 +112,9 @@
 
 .timeline-card .date {
   font-size: 13px;
-  color: #7da7f7;
+  color: var(--accent-color);
   margin-bottom: 12px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .timeline-card .description {
@@ -98,20 +124,81 @@
   line-height: 1.6;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .experience {
-    padding: 40px 0;
+    padding: 80px 20px 100px 20px;
+    max-width: 100%;
   }
+  
+  .experience-title {
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+  
   .timeline {
-    padding-left: 18px;
-    max-width: 98vw;
+    padding-left: 20px;
+    padding-right: 10px;
+    max-width: 100%;
   }
+  
+  .timeline-event {
+    padding-left: 30px;
+    margin-bottom: 40px;
+  }
+  
   .timeline-card {
-    padding: 18px 10px 16px 16px;
+    padding: 20px 16px 18px 16px;
     min-width: 0;
-    max-width: 95vw;
+    max-width: 100%;
+    margin-left: 0;
   }
-  .experience-title h1 {
-    font-size: 26px;
+  
+  .timeline-card h3 {
+    font-size: 18px;
+  }
+  
+  .timeline-card .description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .timeline-dot {
+    left: -10px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: 60px 15px 80px 15px;
+  }
+  
+  .timeline {
+    padding-left: 15px;
+  }
+  
+  .timeline-event {
+    padding-left: 25px;
+  }
+  
+  .timeline-card {
+    padding: 16px 12px 14px 12px;
+  }
+  
+  .timeline-card h3 {
+    font-size: 16px;
+  }
+  
+  .timeline-card .company {
+    font-size: 14px;
+  }
+  
+  .timeline-card .date {
+    font-size: 12px;
+  }
+  
+  .timeline-card .description {
+    font-size: 13px;
   }
 } 

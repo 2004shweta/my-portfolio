@@ -1,6 +1,6 @@
 .certificates {
     padding: 80px 0;
-    background: linear-gradient(180deg, var(--background-color), var(--card-background));
+    background: transparent;
     font-family: var(--font-primary);
     max-width: 1100px;
     margin: 0 auto;
@@ -86,7 +86,7 @@
 .cert-date {
     display: inline-block;
     font-size: 13px;
-    color: #7da7f7;
+    color: var(--accent-color);
     font-weight: 500;
     margin-bottom: 6px;
 }
