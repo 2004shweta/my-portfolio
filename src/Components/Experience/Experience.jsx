@@ -19,7 +19,7 @@ const experience = [
     {
       role: 'Frontend Developer',
       company: 'Creative Minds',
-      date: 'Jun 2023 - Dec 2023',
+      date: 'Jun 2023 - Nov 2023',
       description: 'Built responsive user interfaces with React and improved website performance by 30%. Worked closely with designers to implement modern UI/UX.'
     },
    
